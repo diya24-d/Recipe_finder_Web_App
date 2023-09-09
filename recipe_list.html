@@ -1,0 +1,27 @@
+<!-- recipes/templates/recipes/recipe_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recipe Finder</title>
+</head>
+<body>
+    <h1>Recipe Finder</h1>
+    
+    <form method="GET" action="">
+        <label for="ingredients">Enter Ingredients:</label>
+        <input type="text" name="ingredients" id="ingredients">
+        <input type="submit" value="Search">
+    </form>
+    
+    <h2>Recipes</h2>
+    <ul>
+        {% for recipe in recipes %}
+            <li>
+                <h3>{{ recipe.title }}</h3>
+                <p>Ingredients: {{ recipe.ingredients }}</p>
+                <p>Instructions: {{ recipe.instructions }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
